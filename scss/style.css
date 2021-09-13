@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Zilla+Slab:wght@400;600&display=swap");
+:root {
+  --Background-Color: #262626;
+  --Check-BG: #7cfc00;
+  --Check-Color: #464646;
+  --Color-Text: #f6f6f6;
+  --Text-Hover: #464646;
+  --Box-Links-BG: #424242;
+  --Border-Color-Links: #7cfc00;
+  --Border-Hover: #272727;
+  --Special-BG: #7cfc00;
+  --Special-Hover-BG: #464646;
+}
+
+:root .light {
+  --Background-Color: #f6f6f6;
+  --Check-BG: #d62500;
+  --Check-Color: #c5c5c5;
+  --Color-Text: #464646;
+  --Text-Hover: #f6f6f6;
+  --Box-Links-BG: #f2f2f2;
+  --Border-Color-Links: #d62500;
+  --Border-Hover: #c5c5c5;
+  --Special-BG: #d62500;
+  --Special-Hover-BG: #cccccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: var(--Background-Color);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  font-family: "Inconsolata", monospace;
+  font-family: "Zilla Slab", serif;
+}
+
+body > .toggle-part {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 10rem;
+  height: 8rem;
+  align-items: center;
+  top: 4rem;
+  right: 18rem;
+}
+
+@media screen and (max-width: 980px) {
+  body > .toggle-part {
+    top: 3rem;
+    right: 1rem;
+  }
+}
+
+body > .toggle-part > label {
+  position: relative;
+  font-size: 1.4rem;
+  font-family: "Inconsolata";
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+body > .toggle-part > #toggle-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 6.2rem;
+  height: 2.4rem;
+  border-radius: 0.4rem;
+  background-color: var(--Check-BG);
+  position: relative;
+  outline: 0;
+  cursor: pointer;
+}
+
+body > .toggle-part > #toggle-btn::before {
+  content: "";
+  height: 2.4rem;
+  width: 2.7rem;
+  border-radius: 0.4rem;
+  -webkit-transform: translateX(0) scale(0.8);
+          transform: translateX(0) scale(0.8);
+  background: var(--Check-Color);
+  position: absolute;
+  -webkit-transition-property: background, -webkit-transform;
+  transition-property: background, -webkit-transform;
+  transition-property: transform, background;
+  transition-property: transform, background, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+body > .toggle-part > #toggle-btn:checked {
+  background-color: var(--Check-BG);
+  -webkit-transition-property: background, -webkit-transform;
+  transition-property: background, -webkit-transform;
+  transition-property: transform, background;
+  transition-property: transform, background, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+body > .toggle-part > #toggle-btn:checked::before {
+  -webkit-transform: translateX(3.4rem) scale(0.8);
+          transform: translateX(3.4rem) scale(0.8);
+  background: var(--Check-Color);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem 0;
+}
+
+main > figure > img {
+  width: 12rem;
+  border-radius: 6rem;
+  border: 0.3rem solid var(--Border-Color-Links);
+}
+
+main > h1 {
+  color: var(--Color-Text);
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+main > p {
+  color: var(--Color-Text);
+  font-size: 1.6rem;
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.bx-all-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 2.5rem;
+  background-color: var(--Box-Links-BG);
+  padding: 4rem;
+}
+
+@media screen and (max-width: 980px) {
+  .bx-all-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.bx-all-links > .rows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 980px) {
+  .bx-all-links > .rows {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.bx-all-links > .rows > nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20rem;
+  height: 10rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.2rem solid var(--Border-Color-Links);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.bx-all-links > .rows > nav:hover {
+  background: var(--Border-Color-Links);
+  border: 0.2rem solid var(--Border-Hover);
+}
+
+.bx-all-links > .rows > nav:hover > a {
+  color: var(--Text-Hover);
+}
+
+a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--Color-Text);
+  padding: 3rem;
+  font-size: 2rem;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+a > .iconify {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 1rem;
+}
+
+.contact {
+  height: 5rem;
+  background-color: var(--Special-BG);
+  margin-top: 4rem;
+  border-radius: 1rem;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.contact:hover {
+  background-color: var(--Special-Hover-BG);
+}
+
+.contact:hover > a {
+  color: var(--Color-Text);
+}
+
+.contact > a {
+  padding: 1rem 3rem;
+  color: var(--Text-Hover);
+}
+/*# sourceMappingURL=style.css.map */
