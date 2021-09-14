@@ -207,11 +207,11 @@ a {
 }
 
 .contact {
-  height: 5rem;
-    background-color: var(--Special-BG);
-    margin-top: 4rem;
-    border-radius: 1rem;
-    transition: 0.5s ease-in-out;
+  min-height: 5rem;
+  background-color: var(--Special-BG);
+  margin-top: 4rem;
+  border-radius: 1rem;
+  transition: 0.5s ease-in-out;
 
     &:hover {
       background-color: var(--Special-Hover-BG);
