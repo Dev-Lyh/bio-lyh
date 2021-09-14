@@ -1,28 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Zilla+Slab:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
 
 :root {
-  --Background-Color: #262626;
-  --Check-BG: #7cfc00;
-  --Check-Color: #464646;
+  --Background-Color: #10102B;
+  --Check-BG: #36FF54;
+  --Check-Color: #191944;
   --Color-Text: #f6f6f6;
-  --Text-Hover: #464646;
-  --Box-Links-BG: #424242;
-  --Border-Color-Links: #7cfc00;
-  --Border-Hover: #272727;
-  --Special-BG: #7cfc00;
-  --Special-Hover-BG: #464646;
+  --Text-Hover: #191944;
+  --Box-Links-BG: rgba( 255, 255, 255, 0.25 );
+  --Shadow-Bx-Links: rgba( 31, 38, 135, 0.37 );
+  --Border-Color-Links: #36FF54;
+  --Border-Hover: #0b0b20;
+  --Special-BG: #36FF54;
+  --Special-Hover-BG: #191944;
 }
 :root .light {
-  --Background-Color: #f6f6f6;
-  --Check-BG: #d62500;
+  --Background-Color: #ccc;
+  --Check-BG: #3068B1;
   --Check-Color: #c5c5c5;
-  --Color-Text: #464646;
+  --Color-Text: #191944;
   --Text-Hover: #f6f6f6;
-  --Box-Links-BG: #f2f2f2;
-  --Border-Color-Links: #d62500;
+  --Box-Links-BG: rgba(112, 186, 255, 0);
+  --Shadow-Bx-Links: #bebebe;
+  --Border-Color-Links: #3068B1;
   --Border-Hover: #c5c5c5;
-  --Special-BG: #d62500;
-  --Special-Hover-BG: #cccccc;
+  --Special-BG: #3068B1;
+  --Special-Hover-BG: #9ac0f3;
 }
 
 * {
@@ -42,8 +44,8 @@ body {
   transition: background-color 0.3s ease-in-out;
   position: relative;
 
-  font-family: "Inconsolata", monospace;
-  font-family: "Zilla Slab", serif;
+  font-family: "Poppins", monospace;
+  font-family: "Mulish", sans-serif;
 
   > .toggle-part {
     position: absolute;
@@ -64,16 +66,15 @@ body {
 
     > label {
       position: relative;
-      font-size: 1.4rem;
-      font-family: "Inconsolata";
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      letter-spacing: .2rem;
+      font-family: "Poppins";
+      margin-bottom: .8rem;
     }
 
     > #toggle-btn {
       appearance: none;
-      width: 6.2rem;
+      width: 6.5rem;
       height: 2.4rem;
       border-radius: 0.4rem;
       background-color: var(--Check-BG);
@@ -85,7 +86,7 @@ body {
         content: "";
 
         height: 2.4rem;
-        width: 2.7rem;
+        width: 3rem;
 
         border-radius: 0.4rem;
         transform: translateX(0) scale(0.8);
@@ -116,7 +117,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 3rem 0;
 
   > figure {
     > img {
@@ -128,6 +129,7 @@ main {
 
   > h1 {
     color: var(--Color-Text);
+    font-family: "Poppins", monospace;
     font-size: 3rem;
     margin: 2rem 0;
   }
@@ -135,7 +137,7 @@ main {
   > p {
     color: var(--Color-Text);
     font-size: 1.6rem;
-    font-family: "Inconsolata", monospace;
+    font-family: "Mulish", sans-serif;
     text-align: center;
     margin-bottom: 4rem;
   }
@@ -148,6 +150,13 @@ main {
   border-radius: 2.5rem;
   background-color: var(--Box-Links-BG);
   padding: 4rem;
+
+  background: var(--Box-Links-BG);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 
   @media screen and (max-width: 980px) {
     flex-direction: column;
@@ -172,13 +181,18 @@ main {
       margin: 1rem;
       padding: 1rem;
 
-      border: 0.2rem solid var(--Border-Color-Links);
+      background: transparent;
+      border: .2rem solid var(--Border-Color-Links);
 
       transition: 0.5s ease-in-out;
 
       &:hover {
-        background: var(--Border-Color-Links);
-        border: 0.2rem solid var(--Border-Hover);
+        background: var(--Box-Links-BG);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.27 );
+        backdrop-filter: blur( .6rem );
+        -webkit-backdrop-filter: blur( .6rem );
+        border-radius: 1rem;
+        border: .2rem solid var(--Border-Color-Links);
 
         > a {
           color: var(--Text-Hover);
@@ -210,6 +224,7 @@ a {
   min-height: 5rem;
   background-color: var(--Special-BG);
   margin-top: 4rem;
+  text-align: center;
   border-radius: 1rem;
   transition: 0.5s ease-in-out;
 
